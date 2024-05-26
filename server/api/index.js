@@ -7,8 +7,8 @@ dotenv.config();
 
 
 //Routes
-const authRoutes =require('./routes/auth.js');
-const noteRoutes =require('./routes/note.js');
+const authRoutes =require('../routes/auth.js');
+const noteRoutes =require('../routes/note.js');
 
 mongoose.connect(process.env.MONGO_CONNECT)
 if(mongoose.connect) {
