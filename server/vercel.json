@@ -1,4 +1,4 @@
 { "version": 2, 
   "rewrites": [{ "source": "/(.*)", "destination": "/api"}] ,
-  "routes":[{ "source": "/(.*)", "destination": "/api", "methods":["GET","POST","PUT","PATCH","DELETE","OPTIONS"]}] 
+  "routes":[{ "src": "/(.*)", "dest": "/api", "methods":["GET","POST","PUT","PATCH","DELETE","OPTIONS"]}] 
 }
