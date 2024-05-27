@@ -22,7 +22,7 @@ if(mongoose.connect) {
 
 
 app.use(express.json());
-app.options("",cors(corsConfig));
+
 app.use(cors(corsConfig));
 app.use('',authRoutes)
 app.use('',noteRoutes)
