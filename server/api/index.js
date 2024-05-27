@@ -1,9 +1,4 @@
 const express = require('express');
-const corsConfig = {
-    origin:"*",
-    credential=true,
-    methods:["GET","POST","PUT","DELETE"],
-};
 const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
@@ -22,8 +17,7 @@ if(mongoose.connect) {
 
 
 app.use(express.json());
-app.options("",cors(corsConfig))
-app.use(cors(corsConfig));
+app.use(cors());
 app.use('',authRoutes)
 app.use('',noteRoutes)
 
