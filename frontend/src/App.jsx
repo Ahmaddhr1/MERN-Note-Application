@@ -4,7 +4,6 @@ import Login from "./pages/Login";
 import { createContext, useEffect, useState } from "react";
 import { lookInsession } from "./config/session";
 import Home from "./pages/Home";
-import Privateroute from "./config/privateroute";
 import Note from "./pages/Note";
 import { Toaster } from "react-hot-toast";
 import ViewNote from "./pages/viewNote";
@@ -30,12 +29,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route element={<Navbar />}>
-          <Route element={<Privateroute />}>
             <Route path="/user/:id" element={<Home />} />
             <Route path="/user/:id/createNote" element={<Note />} />
             <Route path="/user/:id/note/:nid" element={<ViewNote />} />
             <Route path="/user/:id/note/:nid/edit" element={<EditNote />} />
-          </Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
