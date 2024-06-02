@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.use(express.json());
 
-router.post("user/:id", async (req, res, next) => {
+router.post("/user/:id", async (req, res, next) => {
   try {
     const { title, description } = req.body;
     const { id } = req.params;
@@ -24,7 +24,7 @@ router.post("user/:id", async (req, res, next) => {
     next(err);
   }
 });
-router.get("user/:id/notes", async (req, res, next) => {
+router.get("/user/:id/notes", async (req, res, next) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id).populate("notes");
@@ -37,7 +37,7 @@ router.get("user/:id/notes", async (req, res, next) => {
   }
 });
 
-router.get("note/:id", async (req, res, next) => {
+router.get("/note/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const note = await Note.findById(id);
@@ -50,7 +50,7 @@ router.get("note/:id", async (req, res, next) => {
   }
 });
 
-router.put("user/:id/note/:nid", async (req, res, next) => {
+router.put("/user/:id/note/:nid", async (req, res, next) => {
   try {
     const { title, description } = req.body;
     const { id, nid } = req.params;
@@ -71,7 +71,7 @@ router.put("user/:id/note/:nid", async (req, res, next) => {
   }
 });
 
-router.delete("user/:id/note/:nid", async (req, res, next) => {
+router.delete("/user/:id/note/:nid", async (req, res, next) => {
   try {
     const { id, nid } = req.params;
     const user = await User.findById(id);
