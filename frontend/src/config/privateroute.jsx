@@ -11,7 +11,7 @@ const privateRoute = () => {
     const session = JSON.parse(lookInsession('user')) || null;
     const sessionId = session? session.id : null;
     return (
-        activeUser === id && id ===  sessionId ? (
+         id ===  sessionId ? (
             <Outlet />
         ) : (
             <Navigate to='/' />
