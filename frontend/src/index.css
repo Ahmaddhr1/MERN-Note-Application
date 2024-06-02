@@ -28,7 +28,7 @@
   }
   
   .containerrr {
-    @apply w-full m-0 px-5 md:px-14 py-6 min-h-[calc(100vh-75px)]
+    @apply w-full m-0 px-5 md:px-14 py-6 h-fit
   }
   .loginContainer{
     @apply w-full flex flex-col justify-center items-center h-[100vh]
