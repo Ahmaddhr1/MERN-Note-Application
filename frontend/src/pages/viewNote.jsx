@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Header from "../components/Header";
 import DeleteIcon from "../../imgs/trash.png";
 import EditIcon from "../../imgs/file-edit.png";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate ,Navigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Usercontext } from "../App";
@@ -90,7 +90,7 @@ const viewNote = () => {
         )}
       </div>
       <div className="w-full flex gap-4 justify-center items-center">
-        {note && (
+        {note && userAuth.id == id && (
           <>
             <button disabled={loading} className="md:w-[120px] w-1/2 md:px-4 py-2 px-2 rounded cursor-pointer bg-green-100">
               <Link
