@@ -20,7 +20,7 @@ const Note = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `${import.meta.env.VITE_SERVER_ROUTE}/user/${userAuth.id}`,
+        `${import.meta.env.VITE_SERVER_ROUTE}user/${userAuth.id}`,
         { title, description }
       );
       setTitle("");
