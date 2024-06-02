@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Header from "../components/Header";
 import ReactQuill from "react-quill";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Navigate } from "react-router-dom";
 import { Usercontext } from "../App";
 import axios from "axios";
 import EditIcon from "../../imgs/file-edit-black.png";
@@ -77,7 +77,7 @@ const EditNote = () => {
   useEffect(() => {
     fetchNote(nid);
   }, [nid]);
-
+  if (userAuth.id == id) {
   return (
     <section
       className="containerrr"
@@ -125,6 +125,9 @@ const EditNote = () => {
       </button>
     </section>
   );
+  }else {
+    return <Navigate to={`/`} />;
+  }
 };
 
 export default EditNote;
