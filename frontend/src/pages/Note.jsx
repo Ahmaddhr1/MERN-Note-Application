@@ -5,10 +5,11 @@ import axios from "axios";
 import { Usercontext } from "../App";
 import toast, { Toaster } from "react-hot-toast";
 import Loading from "../components/Loading";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Navigate,useParams } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 const Note = () => {
+  const { id } =useParams();
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -49,6 +50,7 @@ const Note = () => {
     }
     handleSubmit(e);
   };
+    if (userAuth.id == id) {
   return (
     <section
     className="containerrr"
@@ -107,6 +109,9 @@ const Note = () => {
       </button>
     </section>
   );
+    } else {
+    return <Navigate to={`/`} />;
+  }
 };
 
 export default Note;
