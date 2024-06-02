@@ -92,17 +92,17 @@ const viewNote = () => {
       <div className="w-full flex gap-4 justify-center items-center">
         {note && (
           <>
-            <button disabled={loading}>
+            <button disabled={loading} className="md:w-[120px] w-1/2 md:px-4 py-2 px-2 rounded cursor-pointer bg-green-100">
               <Link
                 to={`/user/${userAuth.id}/note/${note._id}/edit`}
-                className="btn2 w-1/2 md:w-[120px]"
+                className="flex gap-3 center"
               >
                 <p className="text-my-green">Edit</p>
                 <img src={EditIcon} alt="edit icon" className="w-[20px]" />
               </Link>
             </button>
-            <button disabled={loading}>
-              <div onClick={handleDelete} className="redbtn w-1/2 md:w-[120px]">
+            <button disabled={loading} className="md:w-[120px] w-1/2  bg-red-200 center text-red-600  md:px-4 py-2 px-2 rounded cursor-pointer">
+              <div onClick={handleDelete} className="flex gap-3 center">
                 {loading ? (
                   <Loading />
                 ) : (
