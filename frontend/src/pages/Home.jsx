@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Usercontext } from "../App";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,Navigate } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -33,7 +33,7 @@ const Home = () => {
   useEffect(() => {
     fetchNotes(id);
   }, []);
-
+  if (userAuth.id == id) {
   return (
     <section
     className="containerrr"
@@ -101,6 +101,9 @@ const Home = () => {
       )}
     </section>
   );
+  }else {
+  return <Navigate to={`/`} />;
+}
 };
 
 export default Home;
